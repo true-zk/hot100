@@ -12,6 +12,32 @@ struct ListNode
 };
 
 
+    // ListNode *mergeTwo(ListNode *h1, ListNode *h2) {
+    //     if (h1 == nullptr || h2 == nullptr) {
+    //         return (h1 == nullptr) ? h2 : h1;
+    //     }
+    //     ListNode *pseudohead = new ListNode();
+    //     ListNode *p = pseudohead;
+    //     while (h1 != nullptr && h2 != nullptr)
+    //     {
+    //         if (h1->val < h2->val) {
+    //             p->next = h1;
+    //             h1 = h1->next;
+    //         }
+    //         else
+    //         {
+    //             p->next = h2;
+    //             h2 = h2->next;
+    //         }
+    //         p = p->next;
+    //     }
+    //     p->next = (h1 == nullptr) ? h2 : h1;  // 这里不再需要循环
+    //     p = pseudohead->next;
+    //     delete pseudohead;
+    //     return p;
+    // }
+
+
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
