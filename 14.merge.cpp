@@ -1,3 +1,16 @@
+/*
+    56. 合并区间
+    medium
+
+    以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。
+    请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 
+
+    单开一个vector<vector<int>> res;
+    将左端点排序，然后：
+        - 如果interval[i][0] > res.back()[1]，即当前左端点在back的右端点右边，直接加入
+        - 否则，需要合并 res.back()[1] = max(res.back()[1], interval[i][1]);
+*/
+
 #include <vector>
 #include <algorithm>
 using std::vector;

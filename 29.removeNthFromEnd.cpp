@@ -1,3 +1,13 @@
+/*
+    19. 删除链表的倒数第 N 个结点
+    medium
+
+    给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+
+    还是 双指针，
+        加上伪头部
+        固定俩指针的间距是n即可，j到null，i就在n上
+*/
 #include <iostream>
 #include <vector>
 using namespace std;

@@ -1,3 +1,9 @@
+/*
+    medium
+    排序+双指针
+    排序来去重，然后确定i的值，从[i + 1, n - 1]，双指针遍历另外两个值
+*/
+
 #include<vector>
 #include<set>
 #include<algorithm>

@@ -1,3 +1,21 @@
+/*
+    160. 相交链表
+    easy
+    给你两个单链表的头节点 headA 和 headB ，
+    请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
+
+    直观方法：unorfered_set存节点ListNode*
+
+    更好的方法：双指针：
+        初始，各自指向两个head
+        如果都不是空，一起往后移动
+        如果有一个空了，把它指向另一个的head，
+        直到两个都空，或者指向共同节点
+    其实就是长度的数学关系
+    A = a + c
+    B = b + c
+    则 a + c + b = b + c + a
+*/
 #include <iostream>
 #include <unordered_set>
 using std::unordered_set;

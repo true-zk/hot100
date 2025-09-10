@@ -1,3 +1,14 @@
+/*
+    21. 合并两个有序链表
+    easy
+
+    将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的
+
+    用两个指针指向两个的head，
+    然后设一个prehead，和cur = prehead
+    - 找小的，放到cur->next, cur = cur->next；然后小的指针++，
+    - 有一个指针到null，停，把另一个的后半段加到cur->next即可
+*/
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -10,32 +21,6 @@ struct ListNode
     ListNode *next;
     ListNode(int x) : val(x), next(nullptr) {}
 };
-
-
-    // ListNode *mergeTwo(ListNode *h1, ListNode *h2) {
-    //     if (h1 == nullptr || h2 == nullptr) {
-    //         return (h1 == nullptr) ? h2 : h1;
-    //     }
-    //     ListNode *pseudohead = new ListNode();
-    //     ListNode *p = pseudohead;
-    //     while (h1 != nullptr && h2 != nullptr)
-    //     {
-    //         if (h1->val < h2->val) {
-    //             p->next = h1;
-    //             h1 = h1->next;
-    //         }
-    //         else
-    //         {
-    //             p->next = h2;
-    //             h2 = h2->next;
-    //         }
-    //         p = p->next;
-    //     }
-    //     p->next = (h1 == nullptr) ? h2 : h1;  // 这里不再需要循环
-    //     p = pseudohead->next;
-    //     delete pseudohead;
-    //     return p;
-    // }
 
 
 class Solution {

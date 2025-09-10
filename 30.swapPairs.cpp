@@ -1,3 +1,27 @@
+/*
+    24. 两两交换链表中的节点
+    medium
+
+    给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。
+    你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+
+    和翻转有点像
+    三个指针+伪头部
+    pre = pseudohead,
+    node1 = head,
+    node2 = head->next,
+
+    pre->next = node2
+    node1->next = node2->next
+    node2->next = node1
+
+    只要pre迭代即可，到pre->next->next == nullptr就停，因为没有两个node供翻转了
+
+    还有个递归：
+        - node2 = head->next
+        - head->next = swap(head->next->next)
+        - node2->next = head
+*/
 #include <iostream>
 #include <vector>
 using namespace std;

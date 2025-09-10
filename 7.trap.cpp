@@ -1,3 +1,8 @@
+/*
+    hard
+    有三种做法：dp 单调栈 双指针（和5 maxArea思想类似）
+*/
+
 #include<vector>
 #include<algorithm>
 #include<stack>
@@ -5,6 +10,12 @@
 using namespace std;
 
 // dp
+/*
+    先从左到右求出左的left_max数组，
+    然后从右到左一样求出right_max
+
+    对i，接水量就是min(left_max[i], right_max[i]) - h[i]
+*/
 class Solution1 {
 public:
     int trap(vector<int>& height) {
@@ -64,6 +75,14 @@ public:
 };
 
 
+/*
+    双指针：是dp的优化，就是把空间优化到O（1）
+    下标i处的蓄水量由leftMax[i], rightMax[i]中的最小值决定
+    维护left_max和right_max，记录两边的最高值
+    然后双指针从两端往中间走
+    1. 如果h[left] > h[right]: res += left_max - h[left]
+    2. h[left] <= h[right]:    res += right_max - h[right]
+*/
 class Solution3 {
 public:
     int trap(vector<int>& height) {

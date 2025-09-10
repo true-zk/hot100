@@ -1,3 +1,14 @@
+/*
+    240. 搜索二维矩阵 II
+    medium
+
+    编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
+    每行的元素从左到右升序排列。
+    每列的元素从上到下升序排列
+
+    要么按行二分
+    要么背：从(0, n-1)开始搜，如果比结果大，就y--，比结果小，就x++
+*/
 #include <vector>
 #include <iostream>
 
@@ -15,7 +26,7 @@ public:
     // lower_bound 二分模板
     int lower_bound(vector<int> &vec, const int &target) {
         int l = 0, r = vec.size();  // [l, r)
-        while (l < r)  // 必须l < r，l <= r会导致mid == r，越界
+        while (l < r)  // 必须l < r，l <= r会导致mid == r，死循环
         {
             int mid = l + (r - l) / 2;
             if (vec[mid] < target) {

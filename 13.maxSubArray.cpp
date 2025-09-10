@@ -1,3 +1,14 @@
+/*
+    53. 最大子数组和
+    medium
+
+    给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+    子数组是数组中的一个连续部分。
+
+    dp求解比较简单：当前的最大值是前面接上当前和不接的最大值
+    dp[i] = max(dp[i - 1] + nums[i], nums[i])
+    res = max(res, dp[i])
+ */
 #include <vector>
 
 using namespace std;

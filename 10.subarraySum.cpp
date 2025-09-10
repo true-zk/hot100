@@ -1,3 +1,20 @@
+/*
+    560. 和为 K 的子数组
+    medium
+
+    给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。
+    子数组是数组中元素的连续非空序列。
+
+    子数组和 == 可以前缀和 pre[i] = [0, i]的所有数的和，那么[j, i]的和：
+    pre[i]−pre[j−1]==k
+    pre[j−1]==pre[i]−k
+
+    进一步，需要查pre[i]出现了多少次，用hashmap记录：
+    {sum: cnt} key为pre[i]，value为出现的次数
+    这样可以O(1)查询
+    - 注意初始化，(0, 1)，和为0的情况，初始有一种即pre[i] - k == 0，这时候pre[j - 1]=0，即一个数也不加
+*/
+
 #include <vector>
 #include <unordered_map>
 

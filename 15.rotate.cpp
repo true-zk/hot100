@@ -1,3 +1,21 @@
+/*
+    189. 轮转数组
+    medium
+
+    给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
+    必须O(1)空间，原地
+
+    比较好理解的方法是数组翻转；还有个很逆天的数学做法，用gcd
+    
+    数组翻转：
+    数组翻转操作是用双指针，把[l, r]之间的部分翻转；
+    这个题，右移k，见下面例子
+    1 2 3 4 5 6 7    k = 3
+    7 6 5 4 3 2 1    reverse(nums, 0, 6)
+    5 6 7            reverse(nums, 0, k - 1) 
+          1 2 3 4    reverse(nums, k, 6)
+*/
+
 #include <vector>
 #include <algorithm>
 #include <numeric>

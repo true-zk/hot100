@@ -1,3 +1,10 @@
+/*
+    medium
+    经典双指针问题
+    以短的柱子作为蓄水的h，r - l作为w
+    所以，短的柱子的指针往中间收缩
+*/
+
 #include <vector>
 
 using namespace std;

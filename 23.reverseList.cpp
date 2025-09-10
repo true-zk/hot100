@@ -1,3 +1,25 @@
+/*
+    206. 反转链表
+    easy
+
+    给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+
+    史上最经典
+    1. 用3个指针，pre, cur, tmp
+        pre指向cur的前面     初始pre=head, pre->next = nullptr
+        cur为当前，          初始cur = head->next
+        tmp暂存cur->next
+
+    2. 递归
+        假设 1 -> 2 -> ... -> n -> n + 1 <- n + 2 <- ... end
+        即，从n+1已经翻转了，现在在n，要翻转n和n+1之间
+             - 先调用reverse(head->next)，把之后的部分翻转，完成假设
+             - 然后翻转head：
+                head->next->next = head;  // 把n+1的next指向自己，完成翻转head
+                head->next = nullptr;     // 把自己的next指向null，否则出现环
+                return head
+        边界：head == nullptr || head->next == nullptr，直接返回head
+*/
 #include <iostream>
 #include <unordered_set>
 using std::unordered_set;
